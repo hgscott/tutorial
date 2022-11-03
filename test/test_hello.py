@@ -3,8 +3,12 @@ import unittest
 from hello import hello
 
 class TestHello(unittest.TestCase):
-    # TODO: Replace pass with test cases that will test the function you wrote in hello.py
-    pass
+    def test_hello_name(self):
+        self.assertEqual(hello.hello('John'), 'Hello, John!')
+
+    def test_integer(self):
+        with self.assertRaises(TypeError):
+            hello.hello(123)
 
 if __name__ == '__main__':
     unittest.main()     
